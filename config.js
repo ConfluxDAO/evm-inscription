@@ -20,7 +20,7 @@ const config = {
     // scroll => https://rpc.scroll.io
     // zks => https://mainnet.era.zksync.io
     // bsc => https://bsc.publicnode.com
-    rpcUrl: "https://emain-rpc.nftrainbow.cn/MSvtMQywfe"
+    rpcUrl: "https://evm.confluxprc.com"
 }
 
 module.exports = config
