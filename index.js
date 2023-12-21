@@ -56,7 +56,7 @@ async function retryOperation(operation, retries = 3, delay = 3000) {
       if (i === retries - 1) throw error;
       if (error.code === "TIMEOUT" || error.code === "ECONNABORTED") {
         console.log(`请求超时，等待 ${delay}ms 后重试...`);
-        await new Promise((resolve) => setTimeout(resolve, delay));
+        // await new Promise((resolve) => setTimeout(resolve, delay));
       } else {
         throw error;
       }
@@ -84,7 +84,7 @@ async function sendTransaction(nonce, gasPrice) {
         return await wallet.sendTransaction(transaction);
       },
       3,
-      5000
+      100
     ); // 重试次数3次，每次重试间隔5000ms
     console.log(`Transaction with nonce ${nonce} hash:`, tx.hash);
   } catch (error) {
